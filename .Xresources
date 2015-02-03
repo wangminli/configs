@@ -1,0 +1,18 @@
+*ttyModes: erase ^H
+
+!XTERM configuration
+xterm*termName: xterm-256color
+
+XTerm*geometry:148*27
+XTerm*saveLines: 3000
+XTerm*locale: true
+XTerm*utf8: 1
+XTerm*utf8Title: true
+XTerm*faceName: Droid Sans Mono
+XTerm*faceNameDoublesize: WenQuanYi Micro Hei
+XTerm*faceSize: 12
+XTerm*background: #000000
+XTerm*foreground: #FFFFFF
+
+XTerm*boldMode: false
+XTerm*cursorBlink: true

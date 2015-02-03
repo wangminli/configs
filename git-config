@@ -1,0 +1,17 @@
+alias.st=status
+alias.cm=commit
+alias.co=checkout
+alias.br=branch
+alias.rs=reset
+user.name=wangminli
+user.email=wongminli@163.com
+alias.glog=log --graph
+push.default=simple
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=git@github.com:wangminli/configs.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
