@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/wangminli/reis/src/main'
+let g:netrw_dirhist_2='/home/wangminli/reis/src/main/java'
+let g:netrw_dirhist_3='/home/wangminli/reis/src/main/java/org'
+let g:netrw_dirhist_4='/home/wangminli/reis/src/main/java/org/tafdc'
+let g:netrw_dirhist_5='/home/wangminli/reis/src/main/java/org/tafdc/base'
+let g:netrw_dirhist_6='/home/wangminli/reis/src/main/java/org/tafdc/base/subject'
+let g:netrw_dirhist_7='/home/wangminli/reis/src/main/java/org/tafdc/base/subject/controller'
