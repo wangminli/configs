@@ -1,3 +1,4 @@
+# 这是Debian 8主机的配置信息
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -161,7 +162,7 @@ md5check() { md5sum "$1" | grep "$2";}
 alias makescript="fc -rnl | head -1 >"
 alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo"
 alias c="clear"
-alias histg="history | grep"
+alias hgrep="history | grep"
 alias ..='cd ..'
 alias ...='cd ../..'
 extract() {
@@ -202,3 +203,22 @@ getlocation() { lynx -dump http://www.ip-adress.com/ip_tracer/?QRY=$1|grep addre
 #Funny
 kernelgraph() { lsmod | perl -e 'print "digraph \"lsmod\" {";<>;while(<>){@_=split/\s+/; print "\"$_[0]\" -> \"$_\"\n" for split/,/,$_[3]}print "}"' | dot -Tpng | display -;}
 alias busy="cat /dev/urandom | hexdump -C | grep \"ca fe\""
+# 开启Terminal随机告诉你一个命令的含义，有助于记忆繁杂的命令
+echo "Hi, 民利，你知道这个命令吗？"; whatis $(ls /bin | shuf -n 1)
+
+## git
+alias gadd="git add"
+alias gcm="git commit -m"
+alias gam="git commit -am"
+alias gco="git checkout"
+alias gpl="git pull"
+alias gsh="git push"
+alias gst="git status"
+
+## 连接远程主机
+alias rdt="sh ~/remotehost.sh"   
+
+# 快速写入别名并生效
+alias vibash="vim + ~/.bashrc"
+alias takeeffect="source ~/.bashrc"
+
