@@ -126,12 +126,13 @@ alias lstrash='trash-list'        # 列出回收站中的文件
 alias clonereis='git clone ssh://git@218.201.144.5:2200/reis'
 alias toggleamixer='amixer sset Master toggle'
 alias reis="cd /home/wangminli/reis/root"
+alias js="cd /home/wangminli/reis/root/js/reis"
+alias db="cd /home/wangminli/reis/db"
 alias q="exit"
 alias stc="sh /opt/apache-tomcat-7.0.53/bin/startup.sh"
 alias sdt="sh /opt/apache-tomcat-7.0.53/bin/shutdown.sh"
-alias js="cd /home/wangminli/reis/root/js/reis"
 alias ge="cd /home/wangminli/reis/root/general/"
-alias note="sh ~/note.sh"
+alias get="sh ~/get.sh"
 alias notelist="tail -n 40 ~/life/note.md | less"
 alias work="sh ~/work.sh"
 alias worklist="tail -n 40 ~/life/work.md | less"
@@ -142,6 +143,7 @@ alias doc="cd /home/wangminli/Documents/"
 alias dow="cd /home/wangminli/Downloads/"
 alias tree="tree | less"
 alias todo="vim ~/Documents/memo/todo.md"
+alias finish="sudo kill -9"
 source /etc/z.sh
 
 
@@ -204,21 +206,27 @@ getlocation() { lynx -dump http://www.ip-adress.com/ip_tracer/?QRY=$1|grep addre
 kernelgraph() { lsmod | perl -e 'print "digraph \"lsmod\" {";<>;while(<>){@_=split/\s+/; print "\"$_[0]\" -> \"$_\"\n" for split/,/,$_[3]}print "}"' | dot -Tpng | display -;}
 alias busy="cat /dev/urandom | hexdump -C | grep \"ca fe\""
 # 开启Terminal随机告诉你一个命令的含义，有助于记忆繁杂的命令
-echo "Hi, 民利，你知道这个命令吗？"; whatis $(ls /bin | shuf -n 1)
+#echo "Hi, 民利，你知道这个命令吗？"; whatis $(ls /bin | shuf -n 1)
 
 ## git
-alias gadd="git add"
-alias gcm="git commit -m"
+alias gad="git add"
+alias gcm="git commit"
 alias gam="git commit -am"
 alias gco="git checkout"
 alias gpl="git pull"
-alias gsh="git push"
+alias gph="git push"
 alias gst="git status"
 
 ## 连接远程主机
-alias rdt="sh ~/remotehost.sh"   
+alias rdesktop="sh ~/remotehost.sh"   
 
 # 快速写入别名并生效
 alias vibash="vim + ~/.bashrc"
 alias takeeffect="source ~/.bashrc"
 
+alias phdev="bash ~/phdev.sh"
+
+# 全局替换，$1：oldstring ,$2: newstring
+function tihuan {
+    find . -type f -exec sed -i s/$1/$2/g {} \; 
+}
