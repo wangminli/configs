@@ -27,7 +27,6 @@ alias dow="cd /home/wangminli/Downloads/"
 alias tree="tree | less"
 alias todo="vim ~/Documents/memo/todo.md"
 alias finish="sudo kill -9"
-source /etc/z.sh
 
 
 export GTK_IM_MODULE=ibus
