@@ -14,6 +14,8 @@ set noexpandtab
 set nu
 set autoindent
 
+syntax on
+
 nnoremap <silent> <F5> :NERDTree<CR> 
 :cnoreabbr ex Ex
 :cnoreabbr te tabe
