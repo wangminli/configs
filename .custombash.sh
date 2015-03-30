@@ -20,7 +20,7 @@ alias notelist="tail -n 40 ~/life/note.md | less"
 alias work="sh ~/work.sh"
 alias worklist="tail -n 40 ~/life/work.md | less"
 alias lock="xtrlock"
-alias sshminli="ssh minli@192.168.2.3 -p 2022"
+alias sshminli="ssh minli@192.168.0.3 -p 2022"
 alias memo="cd /home/wangminli/Documents/memo"
 alias doc="cd /home/wangminli/Documents/"
 alias dow="cd /home/wangminli/Downloads/"
@@ -40,7 +40,7 @@ alias ls="ls --color=auto"
 alias ll="ls --color -al"
 alias grep='grep --color=auto'
 mcd() { mkdir -p "$1"; cd "$1";}
-cls() { cd "$1"; ls;}
+cl() { cd "$1"; ls;}
 backup() { cp "$1"{,.bak};}
 md5check() { md5sum "$1" | grep "$2";}
 alias makescript="fc -rnl | head -1 >"
@@ -100,7 +100,7 @@ alias gph="git push"
 alias gst="git status"
 
 ## 连接远程主机
-alias rdesktop="sh ~/remotehost.sh"   
+alias rdt="sh ~/remotehost.sh"   
 
 # 快速写入别名并生效
 alias vibash="vim + ~/.bashrc"
