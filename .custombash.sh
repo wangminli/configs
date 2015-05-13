@@ -26,6 +26,7 @@ alias doc="cd /home/wangminli/Documents/"
 alias dow="cd /home/wangminli/Downloads/"
 alias tree="tree | less"
 alias todo="vim ~/Documents/memo/todo.md"
+alias install="sudo apt-get install"
 alias finish="sudo kill -9"
 
 
