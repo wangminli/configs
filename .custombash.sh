@@ -2,38 +2,32 @@
 
 # 自定义的快捷别名
 alias cls='clear'
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 alias op="xdg-open"			
 alias lstrash='trash-list'        # 列出回收站中的文件
-alias clonereis='git clone ssh://git@218.201.144.5:2200/reis'
 alias toggleamixer='amixer sset Master toggle'
 alias reis="cd /home/wangminli/reis/root"
 alias js="cd /home/wangminli/reis/root/js/reis"
 alias db="cd /home/wangminli/reis/db"
 alias q="exit"
-alias stc="sh /opt/apache-tomcat-7.0.53/bin/startup.sh"
-alias sdt="sh /opt/apache-tomcat-7.0.53/bin/shutdown.sh"
 alias ge="cd /home/wangminli/reis/root/general/"
 alias get="sh ~/get.sh"
-alias notelist="tail -n 40 ~/life/note.md | less"
-alias work="sh ~/work.sh"
-alias worklist="tail -n 40 ~/life/work.md | less"
 alias lock="xtrlock"
-alias sshminli="ssh minli@192.168.0.3 -p 2022"
 alias memo="cd /home/wangminli/Documents/memo"
-alias doc="cd /home/wangminli/Documents/"
+alias doc="cd /home/wangminli/文档/"
 alias dow="cd /home/wangminli/Downloads/"
 alias tree="tree | less"
 alias todo="vim ~/Documents/memo/todo.md"
-alias install="sudo apt-get install"
 alias finish="sudo kill -9"
+alias install="sudo apt-get install "
 
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
+##################################################################################3
 ## 一些网上摘抄的快捷操作
 # http://bluereader.org/article/14494368
 #Productivity
@@ -41,7 +35,7 @@ alias ls="ls --color=auto"
 alias ll="ls --color -al"
 alias grep='grep --color=auto'
 mcd() { mkdir -p "$1"; cd "$1";}
-cl() { cd "$1"; ls;}
+cls() { cd "$1"; ls;}
 backup() { cp "$1"{,.bak};}
 md5check() { md5sum "$1" | grep "$2";}
 alias makescript="fc -rnl | head -1 >"
@@ -88,20 +82,19 @@ getlocation() { lynx -dump http://www.ip-adress.com/ip_tracer/?QRY=$1|grep addre
 #Funny
 kernelgraph() { lsmod | perl -e 'print "digraph \"lsmod\" {";<>;while(<>){@_=split/\s+/; print "\"$_[0]\" -> \"$_\"\n" for split/,/,$_[3]}print "}"' | dot -Tpng | display -;}
 alias busy="cat /dev/urandom | hexdump -C | grep \"ca fe\""
-# 开启Terminal随机告诉你一个命令的含义，有助于记忆繁杂的命令
-#echo "Hi, 民利，你知道这个命令吗？"; whatis $(ls /bin | shuf -n 1)
-
+##################################################################################3
 ## git
 alias gad="git add"
 alias gcm="git commit"
 alias gam="git commit -am"
 alias gco="git checkout"
-alias gpl="git pull"
-alias gph="git push"
+alias gpull="git pull"
+alias gpush="git push"
 alias gst="git status"
+alias glog="git log"
 
 ## 连接远程主机
-alias rdt="sh ~/remotehost.sh"   
+alias rdesktop="sh ~/remotehost.sh"   
 
 # 快速写入别名并生效
 alias vibash="vim + ~/.bashrc"
@@ -116,4 +109,28 @@ function tihuan {
 
 # 快速切换目录  https://github.com/huyng/bashmarks
 source ~/.local/bin/bashmarks.sh
+
+
+# 创建文件的同时给文件赋上权限
+function vimm(){
+vim $2;
+chmod $1 $2
+}
+
+# r
+alias r="ranger"
+
+# 录制终端会话:record time.log output.session，名字定义无所谓
+alias record="script -t 2>"  # record tech.log tech.session
+alias recordplay="scriptreplay "
+alias todo="echo '-$!' >> ~/gtd.md"
+alias gtd="cat ~/gtd.md"
+
+# history格式
+HISTTIMEFORMAT="%d/%m/%y %T "
+
+function kelu(){
+	# dd if=debian-jessie-DI-b2-i386-CD-1.iso of=/dev/sdb bs=1M
+	sudo dd if=$1 of=/dev/sdb bs=1M
+}
 
